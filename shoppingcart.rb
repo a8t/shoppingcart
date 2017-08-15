@@ -3,21 +3,21 @@ require './product.rb'
 class Cart
 
   @@cart = []
-  @@cart_hash = {}
+  # @@cart_hash = {}
 
   def self.checkcart
-    @@cart_hash
+    @@cart
   end
 
 
   def self.add_product(product_name, baseprice, taxrate)
     new_product = Product.new(product_name, baseprice, taxrate)
     @@cart << new_product
-    if @@cart_hash[new_product]
-      @@cart_hash[new_product] += 1
-    else
-      @@cart_hash[new_product] = 1
-    end
+    # if @@cart_hash[new_product]
+    #   @@cart_hash[new_product] += 1
+    # else
+    #   @@cart_hash[new_product] = 1
+    # end
     return new
   end
 
